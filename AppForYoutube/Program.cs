@@ -6,14 +6,14 @@ namespace AppForYoutube
     {
         static async Task Main(string[] args)
         {
-            var youtube = new YoutubeService();
-            var user = new User();
+            var youtube = new YoutubeService(); // Создаём получателя команды
+            var user = new User(); // Создаём отправителя команды
 
-            user.SetCommand(new GetVideoInfoCommand(youtube));
-            await user.Run();
+            user.SetCommand(new GetVideoInfoCommand(youtube)); // Выбор команды
+            await user.Run(); // Запуск команды
 
-            user.SetCommand(new DownloadVideoCommand(youtube));
-            await user.Run();
+            user.SetCommand(new DownloadVideoCommand(youtube)); // Выбор команды
+            await user.Run(); // Запуск команды
         }
     }
 }
